@@ -24,7 +24,7 @@ from pyrogram.types import Message
 from Python_ARQ import ARQ
 
 from config import HNDLR
-from Musicjmthon.helpers.merrors import capture_err
+from Musicjepthon.helpers.merrors import capture_err
 
 ARQ_API_KEY = "HMPXNS-BDPCCB-UJKRPU-OQADHG-ARQ"
 aiohttpsession = aiohttp.ClientSession()
@@ -120,7 +120,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["بحث"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["تشغيل"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -354,12 +354,12 @@ async def vplay(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["راندوم"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["اغنية عشوائية"], prefixes=f"{HNDLR}"))
 async def playfrom(client, m: Message):
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(
-            f"**الاستخدام:** \n\n`{HNDLR}راندوم [ايدي دردشه/معرفها]` \n`{HNDLR}راندوم [ايدي دردشه/معرفها]`"
+            f"**الاستخدام:** \n\n`{HNDLR}اغنية عشوائية [ايدي دردشه/معرفها]` \n`{HNDLR}اغنية عشوائية [ايدي دردشه/معرفها]`"
         )
     else:
         args = m.text.split(maxsplit=1)[1]
