@@ -2,8 +2,8 @@ from typing import List
 
 from pyrogram.types import Chat
 
-from Musicjmthon.helpers.get_admins import get as gett
-from Musicjmthon.helpers.get_admins import set
+from Musicjepthon.helpers.get_admins import get as gett
+from Musicjepthon.helpers.get_admins import set
 
 
 async def get_administrators(chat: Chat) -> List[int]:
