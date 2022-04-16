@@ -12,7 +12,7 @@ from pytgcalls.types.input_stream.quality import (
 )
 from youtubesearchpython import VideosSearch
 
-from config import HNDLR, bot, call_py
+from config import HNDLR, bot, call_py, CHANNEL, PHOTO_CH
 from Musicjmthon.helpers.queues import QUEUE, add_to_queue, get_queue
 
 from io import BytesIO
@@ -23,7 +23,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from Python_ARQ import ARQ
 
-from config import HNDLR
 from Musicjepthon.helpers.merrors import capture_err
 
 ARQ_API_KEY = "HMPXNS-BDPCCB-UJKRPU-OQADHG-ARQ"
@@ -143,11 +142,12 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
+                    photo="{PHOTO_CH}",
                     caption=f"""
 **🏷️ العنوان : [{songname}]({link})
 💬 ايدي الدردشة : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                 )
             else:
@@ -162,12 +162,13 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
+                    photo="{PHOTO_CH}",
                     caption=f"""
 **▶ تم تشغيل الاغنية 
 **🏷️ العنوان : [{songname}]({link})
 💬 ايدي الدردشة : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                 )
 
@@ -199,7 +200,8 @@ async def play(client, m: Message):
 **🏷️  العنوان : [{songname}]({url})
 ⏱️ المدة : {duration}
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                         )
                     else:
@@ -221,7 +223,8 @@ async def play(client, m: Message):
 **🏷️  العنوان : [{songname}]({url})
 ⏱️ المدة : {duration}
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}💻
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                             )
                         except Exception as ep:
@@ -261,12 +264,13 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
+                    photo="{PHOTO_CH}",
                     caption=f"""
 #⃣ Video Di Antrian Ke {pos}
 **🏷️  العنوان : [{songname}]({url})
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                 )
             else:
@@ -285,11 +289,12 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
+                    photo="{PHOTO_CH}",
                     caption=f"""
 **🏷️  العنوان : [{songname}]({url})
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                 )
 
@@ -328,7 +333,8 @@ async def vplay(client, m: Message):
 **🏷️  العنوان : [{songname}]({url})
 ⏱️ المدة : {duration}
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                         )
                     else:
@@ -347,7 +353,8 @@ async def vplay(client, m: Message):
 **🏷️  العنوان : [{songname}]({url})
 ⏱️ المدة : {duration}
 💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+🎧 طلب من : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,
                             )
                         except Exception as ep:
@@ -391,12 +398,13 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
+                        photo="{PHOTO_CH}",
                         caption=f"""
 **▶ ابدأ تشغيل الأغاني من {chat}
 🏷️ العنوان : [{songname}]({link})
 💬 الدردشة : {chat_id}
-🎧 من الطلب : {m.from_user.mention}**
+🎧 من الطلب : {m.from_user.mention}
+💻 قناة السورس : [ قناة المطور ](t.me/{CHANNEL})**
 """,                  
          )
             await hmm.delete()
