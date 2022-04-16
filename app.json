@@ -30,7 +30,20 @@
         "SUDO_USERS": {
             "description": "هنا ضع ايدي حسابك كمطور للبوت بمكنك وضع اكثر من شخص بوضع ايدي المستخدم",
             "required": true
-        }
+        },
+        "OWNER_NAME": {
+            "description": "ضع هنا اسم المطور",
+            "required": true
+        },
+        "CHANNEL": {
+            "description": "هنا ضع معرف قناتك او كروبك بدون @",
+            "required": true
+        },
+        "PHOTO_CH": {
+            "description": "ضع هنا رابط الصورة تليكراف",
+            "required": true
+        }        
+        
     },
     "addons": [],
     "buildpacks": [
