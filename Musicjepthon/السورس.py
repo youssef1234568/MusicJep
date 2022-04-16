@@ -6,7 +6,7 @@ from time import time
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from config import HNDLR, SUDO_USERS
+from config import HNDLR, SUDO_USERS, OWNER_NAME, CHANNEL
 
 START_TIME = datetime.utcnow()
 TIME_DURATION_UNITS = (
