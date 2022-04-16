@@ -2,9 +2,9 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import HNDLR, call_py
-from Musicjmthon.helpers.decorators import authorized_users_only
-from Musicjmthon.helpers.handlers import skip_current_song, skip_item
-from Musicjmthon.helpers.queues import QUEUE, clear_queue
+from Musicjepthon.helpers.decorators import authorized_users_only
+from Musicjepthon.helpers.handlers import skip_current_song, skip_item
+from Musicjepthon.helpers.queues import QUEUE, clear_queue
 
 
 @Client.on_message(filters.command(["تخطي"], prefixes=f"{HNDLR}"))
